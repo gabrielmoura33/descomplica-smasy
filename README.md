@@ -1,5 +1,5 @@
 <p align="center">
-     <img src="./Design/Artefatos/smasy_logo_primary.svg" width="300" />
+     <img src="./Design/Artefatos/smasy_logo_repo.svg" width="300" />
 </p>
 
 <p align="center">
