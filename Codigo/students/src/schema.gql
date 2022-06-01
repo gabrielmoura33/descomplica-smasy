@@ -11,3 +11,34 @@ directive @external on OBJECT | FIELD_DEFINITION
 directive @requires(fields: String!) on FIELD_DEFINITION
 
 directive @provides(fields: String!) on FIELD_DEFINITION
+
+type Student {
+  id: ID!
+  name: String!
+  email: String!
+  cpf: String!
+}
+
+type Query {
+  students(search: String): [Student!]!
+  student(id: String!): Student!
+}
+
+type Mutation {
+  createStudent(data: CreateStudentInput!): Student!
+  updateStudent(data: UpdateStudentInput!): Student!
+  removeStudent(id: String!): Student!
+}
+
+input CreateStudentInput {
+  name: String!
+  email: String!
+  cpf: String!
+}
+
+input UpdateStudentInput {
+  name: String
+  email: String
+  cpf: String
+  id: String!
+}
