@@ -49,6 +49,6 @@ Você pode utilizar a seguinte URL para visualizar todas as telas: [Visualizar](
 
 The purpose of MVT is to facilitate the **_consensual forensic analysis_** of devices of those who might be targets of sophisticated mobile spyware attacks, especially members of civil society and marginalized communities. We do not want MVT to enable privacy violations of non-consenting individuals. In order to achieve this, MVT is released under its own license. [Read more here.](https://docs.mvt.re/en/latest/license/) -->
 
-**@Author:** 👨🏾‍💻 - Gabriel de Moura e Souza.
-**@Linkedin:** [Gabriel de Moura e Souza](linkedin.com/in/gabriel-de-moura-e-souza/)
-**@Instagraam:** [@gabrielmoura.dev](https://www.instagram.com/gabrielmoura.dev/)
+**@Author:** 👨🏾‍💻 - Gabriel de Moura e Souza. <br />
+**@Linkedin:** [Gabriel de Moura e Souza](linkedin.com/in/gabriel-de-moura-e-souza/) <br />
+**@Instagraam:** [@gabrielmoura.dev](https://www.instagram.com/gabrielmoura.dev/) <br />
