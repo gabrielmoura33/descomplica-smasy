@@ -1,26 +1,64 @@
 import { Injectable } from '@nestjs/common';
+import { PrismaService } from 'src/modules/database/prisma/prisma.service';
 import { CreateStudentInput } from './dto/create-student.input';
 import { UpdateStudentInput } from './dto/update-student.input';
 
 @Injectable()
 export class StudentsService {
+  constructor(private prismaSvc: PrismaService) {}
   create(createStudentInput: CreateStudentInput) {
-    return 'This action adds a new student';
+    return this.prismaSvc.student.create({
+      data: createStudentInput,
+    });
   }
 
-  findAll() {
-    return `This action returns all students`;
+  findAll(search?: string) {
+    return this.prismaSvc.student.findMany({
+      where: {
+        deletedAt: null,
+        OR: [
+          {
+            cpf: {
+              contains: search,
+            },
+          },
+          {
+            name: {
+              contains: search,
+            },
+          },
+          {
+            email: {
+              contains: search,
+            },
+          },
+        ],
+      },
+    });
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} student`;
+  findOne(id: string) {
+    return this.prismaSvc.student.findFirst({
+      where: {
+        id,
+        deletedAt: null,
+      },
+    });
   }
 
-  update(id: number, updateStudentInput: UpdateStudentInput) {
-    return `This action updates a #${id} student`;
+  update(id: string, updateStudentInput: UpdateStudentInput) {
+    return this.prismaSvc.student.update({
+      where: { id },
+      data: updateStudentInput,
+    });
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} student`;
+  remove(id: string) {
+    return this.prismaSvc.student.update({
+      where: { id },
+      data: {
+        deletedAt: new Date(),
+      },
+    });
   }
 }
