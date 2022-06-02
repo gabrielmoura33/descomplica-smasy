@@ -14,7 +14,7 @@ export const Container = styled.div`
   &:hover {
     background: linear-gradient(
         90deg,
-        rgba(117, 205, 219, 0.1) 0.45%,
+        rgba(0, 231, 142, 0.1) 0.45%,
         rgba(252, 253, 255, 0.1) 31.4%
       ),
       white;
@@ -27,7 +27,7 @@ export const Container = styled.div`
     content: ' ';
     width: 0.25rem;
     height: 0%;
-    background-color: rgba(117, 205, 219, 1);
+    background-color: rgba(0, 231, 142, 1);
     border-radius: 0.313rem 0 0 0.313rem;
     position: absolute;
     top: 0;
@@ -50,14 +50,35 @@ export const Container = styled.div`
     color: #bfbfcc;
   }
 
+  .column p {
+    color: #787880;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 26px;
+  }
+
+  .column h2 {
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 34px;
+    /* identical to box height, or 142% */
+
+    /* Textos / H1 */
+
+    color: #5a5a66;
+  }
   p {
     font-weight: 600;
   }
 
   .id {
-    font-family: 'Roboto';
+    font-family: IBM Plex Sans;
     font-weight: 600;
-    /* color: var(--color-card-label); */
+    color: #bfbfcc;
   }
   .name {
     /* font-family: IBM Plex Sans; */

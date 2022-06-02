@@ -10,7 +10,7 @@ const CardStudent: React.FC = () => {
       <div className="id column">1</div>
       <div className="donators column">
         <span>Aluno</span>
-        <strong>Gabriel de Moura e Souza</strong>
+        <h2>Gabriel de Moura e Souza</h2>
       </div>
       <div className="amount column">
         <span>E-Mail</span>

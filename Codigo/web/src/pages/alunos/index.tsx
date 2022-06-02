@@ -43,45 +43,34 @@ function StudentsListPage() {
       ></DeleteModal> */}
       {/* {loading && <Loading></Loading>} */}
       <Head>
-        <title>Artemis - Gestão Para ONGs</title>
+        <title>Descomplica - Smasy</title>
       </Head>
       <Header className="page-header">
         <div className="container">
-          <a id="avatar-profile">
-            <p>
-              Gabriel Moura <span>Ver perfil</span>
-            </p>
-            <img src="https://github.com/gabrielmoura33.png" />
-          </a>
           <section id="top" className="animate-up z-15">
-            <h2 className="sr-only">Homepage</h2>
             <Image src={logoImg} alt="Be The hero" />
+            <a id="avatar-profile">
+              <p>
+                Gabriel Moura <span>Ver perfil</span>
+              </p>
+              <img src="https://github.com/gabrielmoura33.png" />
+            </a>
           </section>
-
-          <div className="separator"></div>
 
           <section id="summary" className="animate-up delay-1">
             <div className="info">
               <div className="total">
                 <strong>12</strong>
-                Animais ao total
-              </div>
-              <div className="in-progress">
-                <strong>0</strong>
-                Em andamento
-              </div>
-              <div className="finished">
-                <strong>0</strong>
-                Encerrados
+                Alunos ao total
               </div>
             </div>
 
             <Link href="/cadastrar-animal">
-              <a className="btn orange">
+              <a className="btn black">
                 <span>
-                  <Image src={plusIcon} alt="Novo doação" />
+                  <Image src={plusIcon} alt="Novo aluno" />
                 </span>
-                Adicionar novo animal
+                Adicionar aluno
               </a>
             </Link>
           </section>
@@ -89,8 +78,6 @@ function StudentsListPage() {
       </Header>
       <Container>
         <main className="animate-up delay-2">
-          <h1 className="sr-only">Trabalhos</h1>
-
           <div className="cards">
             <CardStudent />
             <CardStudent />

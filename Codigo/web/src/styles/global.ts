@@ -8,6 +8,10 @@ export default createGlobalStyle`
         box-sizing: border-box;
     }
 
+    a {
+      text-decoration: none;
+      cursor: pointer;
+    }
     body {
         font: 400 14px Roboto, sans-serif;
         background: ${({ theme }) => theme.colors.background};
