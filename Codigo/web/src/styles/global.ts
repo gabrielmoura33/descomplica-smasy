@@ -27,6 +27,10 @@ export default createGlobalStyle`
         cursor: pointer;
     }
 
+    .flex {
+      display: flex;
+    }
+
     @media (max-width: 1080px) {
       html {
         font-size: 93.75%; /* 15px */

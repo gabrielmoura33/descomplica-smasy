@@ -1,32 +1,55 @@
 import Image from 'next/image';
-import React from 'react';
+import Router from 'next/router';
+import React, { HTMLProps } from 'react';
 // import { Container } from './styles';
 import editIcon from '../../assets/icons/edit-24.svg';
 import trashIcon from '../../assets/icons/trash-24.svg';
+import { calculateDiferenceFromDate } from '../../utils/calculateInYears';
 import { Container } from './styles';
-const CardStudent: React.FC = () => {
+
+export interface Student {
+  index: number;
+  name: string;
+  cpf: string;
+  email: string;
+  createdAt: string;
+  slug: string;
+}
+interface CardStudentProps extends HTMLProps<HTMLDivElement> {
+  student: Student;
+}
+function CardStudent(props: CardStudentProps) {
+  const { student, key } = props;
+
+  function handleEdit() {
+    return Router.push(`/alunos/${student.slug}`);
+  }
   return (
-    <Container>
-      <div className="id column">1</div>
+    <Container key={key}>
+      <div className="id column">{student.index}</div>
       <div className="donators column">
         <span>Aluno</span>
-        <h2>Gabriel de Moura e Souza</h2>
+        <h2>{student.name}</h2>
       </div>
       <div className="amount column">
         <span>E-Mail</span>
-        <p>gabrielmoura.music@gmail.com</p>
+        <p>{student.email}</p>
       </div>
       <div className="amount column">
         <span>CPF</span>
-        <p>116.064.996-02</p>
+        <p>{student.cpf}</p>
       </div>
       <div className="deadline column">
         <span>Data</span>
-        <p>Há 13 dias</p>
+        <p>{calculateDiferenceFromDate(student.createdAt)}</p>
       </div>
 
       <div className="actions column flex">
-        <a href="" className="btn white edit" title="Editar doação">
+        <a
+          onClick={handleEdit}
+          className="btn white edit"
+          title="Editar doação"
+        >
           <Image src={editIcon} alt="Editar doação" />
         </a>
         <button
@@ -39,6 +62,6 @@ const CardStudent: React.FC = () => {
       </div>
     </Container>
   );
-};
+}
 
 export default CardStudent;

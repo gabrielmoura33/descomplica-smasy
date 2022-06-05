@@ -7,6 +7,7 @@ const theme = {
     margin: '#E1E3E5',
     inputBorder: '#DCDCE5',
     neutral100: '#FFFFFF',
+    invalid: '#E70000',
   },
 };
 

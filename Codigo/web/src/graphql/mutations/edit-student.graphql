@@ -1,0 +1,11 @@
+mutation UpdateStudent(
+  $id: String!
+  $name: String!
+  $email: String!
+  $cpf: String!
+) {
+  updateStudent(data: { id: $id, name: $name, cpf: $cpf, email: $email }) {
+    name
+    id
+  }
+}

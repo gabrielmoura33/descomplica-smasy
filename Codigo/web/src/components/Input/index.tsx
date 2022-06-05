@@ -1,19 +1,30 @@
-import React, { InputHTMLAttributes } from 'react';
-import { FieldValues, UseFormRegister } from 'react-hook-form';
-import { Container } from './styles';
-interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
-  nameRef: string;
-  register: UseFormRegister<FieldValues>;
-  required?: boolean;
+import React, { forwardRef, ForwardRefRenderFunction } from 'react';
+import { FieldError } from 'react-hook-form';
+import { Container, FormErrorMessage } from './styles';
+interface InputProps {
+  placeholder: string;
+  type?: string;
+  error: FieldError | undefined;
 }
 
-const Input: React.FC<InputProps> = ({
-  nameRef,
-  register,
-  required = false,
-  ...rest
-}) => {
-  return <Container {...(register(nameRef), { required })} {...rest} />;
+const InputBase: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
+  { placeholder, type = 'text', error, ...rest },
+  ref
+) => {
+  return (
+    <>
+      <Container
+        isInvalid={!!error}
+        ref={ref}
+        type={type}
+        placeholder={placeholder}
+        {...rest}
+      />
+      {!!error && <FormErrorMessage>{error.message}</FormErrorMessage>}
+    </>
+  );
 };
+
+const Input = forwardRef(InputBase);
 
 export default Input;

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   display: grid;
-  grid-template-columns: 5% 25% 25% 20% 20% 10%;
+  grid-template-columns: 5% 25% 25% 20% 15% 15%;
   align-items: center;
 
   margin-bottom: 0.5rem;
@@ -136,4 +136,27 @@ export const Container = styled.div`
   padding: 1.5rem;
 
   text-align: left;
+  .btn.white {
+    background: #fcfdff;
+    border: 1px solid #e1e3e6;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5%;
+    transition: 0.2s;
+    &:hover {
+      background: #f0f2f5;
+    }
+  }
+
+  .actions .btn {
+    width: 2.5rem;
+    height: 2.5rem;
+
+    padding: 0;
+  }
+  .actions .btn + button {
+    margin-left: 0.5rem;
+  }
 `;

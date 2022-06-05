@@ -1,0 +1,6 @@
+mutation CreateStudent($name: String!, $email: String!, $cpf: String!) {
+  createStudent(data: { name: $name, cpf: $cpf, email: $email }) {
+    name
+    id
+  }
+}

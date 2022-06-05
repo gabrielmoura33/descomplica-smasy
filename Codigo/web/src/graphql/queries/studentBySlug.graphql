@@ -1,0 +1,10 @@
+query GetStudentBySlug($slug: String!) {
+  studentBySlug(slug: $slug) {
+    id
+    name
+    email
+    cpf
+    slug
+    createdAt
+  }
+}

@@ -1,5 +1,15 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
+const animateUp = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
 export const Header = styled.header`
   background: ${({ theme }) => theme.colors.primary};
   width: 100vw;
@@ -173,6 +183,14 @@ export const Header = styled.header`
     width: 1.5rem;
     height: 1.5rem;
   }
+
+  .animate-up-header {
+    transform: translateY(35px);
+    opacity: 0;
+
+    animation: ${animateUp} 300ms forwards;
+    animation-delay: 100ms;
+  }
 `;
 
 export const Container = styled.div`
@@ -184,12 +202,13 @@ export const Container = styled.div`
     z-index: 0;
   }
 
-  /* .animate-up {
+  .animate-up-content {
     transform: translateY(35px);
     opacity: 0;
 
-    animation: up 200ms forwards;
-  } */
+    animation: ${animateUp} 300ms forwards;
+    animation-delay: 100ms;
+  }
 
   /* @keyframes pop {
     from {
