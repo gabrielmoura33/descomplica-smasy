@@ -9,7 +9,13 @@ export class StudentsResolver {
   constructor(private readonly studentsService: StudentsService) {}
 
   @Mutation(() => Student)
-  createStudent(@Args('data') createStudentInput: CreateStudentInput) {
+  async createStudent(@Args('data') createStudentInput: CreateStudentInput) {
+    const studentWithTheSameName = await this.studentsService.findByName(
+      createStudentInput.name,
+    );
+
+    if (studentWithTheSameName) throw new Error('Student already exist!');
+
     return this.studentsService.create(createStudentInput);
   }
 
@@ -20,9 +26,9 @@ export class StudentsResolver {
     return this.studentsService.findAll(search);
   }
 
-  @Query(() => Student, { name: 'student' })
-  findOne(@Args('id', { type: () => String }) id: string) {
-    return this.studentsService.findOne(id);
+  @Query(() => Student, { name: 'studentBySlug' })
+  findOne(@Args('slug', { type: () => String }) slug: string) {
+    return this.studentsService.findBySlug(slug);
   }
 
   @Mutation(() => Student)

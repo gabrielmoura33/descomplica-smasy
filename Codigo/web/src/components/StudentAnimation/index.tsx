@@ -11,7 +11,14 @@ const StudentAnimation: React.FC = () => {
       preserveAspectRatio: 'xMidYMid slice',
     },
   };
-  return <Lottie options={defaultOptions} height={556} width={538} />;
+  return (
+    <Lottie
+      options={defaultOptions}
+      height={556}
+      width={538}
+      style={{ margin: 0 }}
+    />
+  );
 };
 
 export default StudentAnimation;

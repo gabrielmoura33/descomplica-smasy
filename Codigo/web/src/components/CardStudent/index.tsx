@@ -1,44 +1,67 @@
 import Image from 'next/image';
-import React from 'react';
+import Router from 'next/router';
+import React, { HTMLProps } from 'react';
 // import { Container } from './styles';
 import editIcon from '../../assets/icons/edit-24.svg';
 import trashIcon from '../../assets/icons/trash-24.svg';
-import { Container } from './styles';
-const CardStudent: React.FC = () => {
+import { calculateDiferenceFromDate } from '../../utils/calculateInYears';
+import styles from './card-student.module.scss';
+
+export interface Student {
+  index: number;
+  name: string;
+  cpf: string;
+  email: string;
+  createdAt: string;
+  slug: string;
+}
+interface CardStudentProps extends HTMLProps<HTMLDivElement> {
+  student: Student;
+}
+function CardStudent(props: CardStudentProps) {
+  const { student, key } = props;
+
+  function handleEdit() {
+    return Router.push(`/alunos/${student.slug}`);
+  }
   return (
-    <Container>
-      <div className="id column">1</div>
-      <div className="donators column">
+    <div className={styles['card-container']} key={key}>
+      <div className={`${styles.id} ${styles.column}`}>{student.index}</div>
+      <div className={`${styles.donators} ${styles.column}`}>
         <span>Aluno</span>
-        <strong>Gabriel de Moura e Souza</strong>
+        <h2>{student.name}</h2>
       </div>
-      <div className="amount column">
+      <div className={`${styles.amount} ${styles.column}`}>
         <span>E-Mail</span>
-        <p>gabrielmoura.music@gmail.com</p>
+        <p>{student.email}</p>
       </div>
-      <div className="amount column">
+      <div className={`${styles.amount} ${styles.column}`}>
         <span>CPF</span>
-        <p>116.064.996-02</p>
+        <p>{student.cpf}</p>
       </div>
       <div className="deadline column">
         <span>Data</span>
-        <p>Há 13 dias</p>
+        <p>{calculateDiferenceFromDate(student.createdAt)}</p>
       </div>
 
-      <div className="actions column flex">
-        <a href="" className="btn white edit" title="Editar doação">
+      <div className={`${styles.actions} ${styles.column} flex`}>
+        <a
+          onClick={handleEdit}
+          className={`${styles.btn} ${styles.white} ${styles.edit}`}
+          title="Editar doação"
+        >
           <Image src={editIcon} alt="Editar doação" />
         </a>
         <button
-          className="delete btn white"
+          className={`${styles.btn} ${styles.white} ${styles.edit}`}
           title="Excluir doação"
           type="button"
         >
           <Image src={trashIcon} alt="Excluir doação" />
         </button>
       </div>
-    </Container>
+    </div>
   );
-};
+}
 
 export default CardStudent;

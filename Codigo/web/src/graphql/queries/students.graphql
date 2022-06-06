@@ -1,0 +1,10 @@
+query GetStudents($search: String!) {
+  students(search: $search) {
+    id
+    name
+    email
+    cpf
+    slug
+    createdAt
+  }
+}
