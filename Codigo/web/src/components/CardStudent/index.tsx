@@ -26,16 +26,16 @@ function CardStudent(props: CardStudentProps) {
   }
   return (
     <div className={styles['card-container']} key={key}>
-      <div className="id column">{student.index}</div>
-      <div className="donators column">
+      <div className={`${styles.id} ${styles.column}`}>{student.index}</div>
+      <div className={`${styles.donators} ${styles.column}`}>
         <span>Aluno</span>
         <h2>{student.name}</h2>
       </div>
-      <div className="amount column">
+      <div className={`${styles.amount} ${styles.column}`}>
         <span>E-Mail</span>
         <p>{student.email}</p>
       </div>
-      <div className="amount column">
+      <div className={`${styles.amount} ${styles.column}`}>
         <span>CPF</span>
         <p>{student.cpf}</p>
       </div>
@@ -44,16 +44,16 @@ function CardStudent(props: CardStudentProps) {
         <p>{calculateDiferenceFromDate(student.createdAt)}</p>
       </div>
 
-      <div className="actions column flex">
+      <div className={`${styles.actions} ${styles.column} flex`}>
         <a
           onClick={handleEdit}
-          className="btn white edit"
+          className={`${styles.btn} ${styles.white} ${styles.edit}`}
           title="Editar doação"
         >
           <Image src={editIcon} alt="Editar doação" />
         </a>
         <button
-          className="delete btn white"
+          className={`${styles.btn} ${styles.white} ${styles.edit}`}
           title="Excluir doação"
           type="button"
         >

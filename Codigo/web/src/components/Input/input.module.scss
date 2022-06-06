@@ -7,8 +7,8 @@
   padding: 0 24px;
   margin-top: 4px;
 
-  &.invalid {
-    border: 2px solid var(--color-invalid);
+  .invalid {
+    border: 2px solid #e70000;
   }
 }
 
@@ -16,3 +16,8 @@
 //   color: ${({ theme }) => theme.colors.invalid};
 //   margin: 4px 0;
 // `;
+
+.invalid-message {
+  color: #e70000;
+  margin: 4px 0;
+}

@@ -34,9 +34,9 @@ function StudentsListPage() {
       </Head>
       <header className={styles.header}>
         <div className={styles['container']}>
-          <section id="top" className="animate-up-header z-15">
-            <Image src={logoImg} alt="Descomplica Smasy" />
-            <a id={styles['avatar-profile']}>
+          <section id="top" className="animate-up z-15">
+            <Image src={logoImg} alt="Descomplica Smasy" id="logo" />
+            <a className={styles['avatar-profile']}>
               <p>
                 Gabriel Moura <span>Ver perfil</span>
               </p>
@@ -49,7 +49,10 @@ function StudentsListPage() {
             </a>
           </section>
 
-          <section id="summary" className="animate-up delay-1">
+          <section
+            className="animate-up delay-1"
+            style={{ marginTop: '2rem', marginBottom: '2rem' }}
+          >
             <div className={styles['info']}>
               <div className={styles['total']}>
                 <strong>{data?.students.length ?? 0}</strong>

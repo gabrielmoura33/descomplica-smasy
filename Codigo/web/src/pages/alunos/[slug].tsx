@@ -91,7 +91,7 @@ function UpdateStudent() {
       </Head>
       {loading && <Loading></Loading>}
       <div className={styles['new-student-container']}>
-        <div className="content">
+        <div className={styles['content']}>
           <section>
             <Image src={logoImg} alt="Descomplica - Smasy" />
             <h1>Cadastro de Aluno</h1>
@@ -126,7 +126,7 @@ function UpdateStudent() {
             />
 
             <div className="input-group">
-              <Button type="submit">Editar</Button>
+              <Button type="submit">Cadastrar</Button>
             </div>
           </form>
         </div>

@@ -8,19 +8,21 @@ interface InputProps {
 }
 
 const InputBase: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
-  { placeholder, type = 'text', ...rest },
+  { placeholder, type = 'text', error, ...rest },
   ref
 ) => {
   return (
     <>
       <input
-        className={styles['input-container']}
+        className={`${styles['input-container']} ${error ?? 'invalid'}`}
         ref={ref}
         type={type}
         placeholder={placeholder}
         {...rest}
       />
-      {/* {!!error && <FormErrorMessage>{error.message}</FormErrorMessage>} */}
+      {!!error && (
+        <span className={`${styles['invalid-message']}`}>{error.message}</span>
+      )}
     </>
   );
 };

@@ -99,3 +99,14 @@ button {
 .delay-2 {
   animation-delay: 200ms;
 }
+
+#logo {
+  width: 13rem;
+  height: 3rem;
+}
+
+#top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
