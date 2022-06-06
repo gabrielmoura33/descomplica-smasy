@@ -5,7 +5,7 @@ import React, { HTMLProps } from 'react';
 import editIcon from '../../assets/icons/edit-24.svg';
 import trashIcon from '../../assets/icons/trash-24.svg';
 import { calculateDiferenceFromDate } from '../../utils/calculateInYears';
-import { Container } from './styles';
+import styles from './card-student.module.scss';
 
 export interface Student {
   index: number;
@@ -25,7 +25,7 @@ function CardStudent(props: CardStudentProps) {
     return Router.push(`/alunos/${student.slug}`);
   }
   return (
-    <Container key={key}>
+    <div className={styles['card-container']} key={key}>
       <div className="id column">{student.index}</div>
       <div className="donators column">
         <span>Aluno</span>
@@ -60,7 +60,7 @@ function CardStudent(props: CardStudentProps) {
           <Image src={trashIcon} alt="Excluir doação" />
         </button>
       </div>
-    </Container>
+    </div>
   );
 }
 

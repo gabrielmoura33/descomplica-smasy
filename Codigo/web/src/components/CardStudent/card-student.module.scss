@@ -1,6 +1,4 @@
-import styled from 'styled-components';
-
-export const Container = styled.div`
+.card-container {
   display: grid;
   grid-template-columns: 5% 25% 25% 20% 15% 15%;
   align-items: center;
@@ -159,4 +157,4 @@ export const Container = styled.div`
   .actions .btn + button {
     margin-left: 0.5rem;
   }
-`;
+}

@@ -1,6 +1,4 @@
-import styled from 'styled-components';
-
-export const Modal = styled.div`
+.modal-wrapper {
   width: 100vw;
 
   height: 100vh;
@@ -86,4 +84,4 @@ export const Modal = styled.div`
   .button-secondary:hover {
     filter: brightness(90%);
   }
-`;
+}

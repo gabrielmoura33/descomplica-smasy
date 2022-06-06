@@ -18,8 +18,8 @@ import {
   useUpdateStudentMutation,
 } from '../../graphql/generated/graphql';
 import { withApollo } from '../../lib/withApollo';
-import { Container } from '../../styles/pages/NewStudent';
-import theme from '../../styles/theme';
+import styles from '../../styles/pages/new-student.module.scss';
+
 interface UpdateStudentProps {
   name: string;
   email: string;
@@ -90,18 +90,18 @@ function UpdateStudent() {
         <title>Smasy - Edição de aluno</title>
       </Head>
       {loading && <Loading></Loading>}
-      <Container>
+      <div className={styles['new-student-container']}>
         <div className="content">
           <section>
             <Image src={logoImg} alt="Descomplica - Smasy" />
-            <h1>Editar Aluno</h1>
+            <h1>Cadastro de Aluno</h1>
             <p>
               Faça seu cadastro, entre na plataforma e ajude a cadastrar novos
               alunos
             </p>
             <Link href="/alunos">
-              <a className="backLink">
-                <FiArrowLeft size={16} color={theme.colors.primary} />
+              <a className={styles['backLink']}>
+                <FiArrowLeft size={16} color="#00e78e" />
                 Voltar para Home
               </a>
             </Link>
@@ -130,7 +130,7 @@ function UpdateStudent() {
             </div>
           </form>
         </div>
-      </Container>
+      </div>
     </>
   );
 }

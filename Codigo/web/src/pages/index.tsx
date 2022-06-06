@@ -7,15 +7,14 @@ import logoImg from '../assets/images/logo_primary.svg';
 import Button from '../components/Button';
 import StudentAnimation from '../components/StudentAnimation';
 // import { useAuth } from '../context/AuthContext';
-import { Container } from '../styles/pages/signUpPage';
-
+import styles from '../styles/pages/sign-in.module.scss';
 export default function SignIn() {
   return (
     <>
       <Head>
         <title>Descomplica - Smasy</title>
       </Head>
-      <Container>
+      <div className={styles['sign-container']}>
         <section className="form">
           <Image src={logoImg} alt="Descomplica - Smasy" />
 
@@ -27,7 +26,7 @@ export default function SignIn() {
         </section>
 
         <StudentAnimation></StudentAnimation>
-      </Container>
+      </div>
     </>
   );
 }

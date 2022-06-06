@@ -1,6 +1,4 @@
-import styled from 'styled-components';
-
-export const Container = styled.div`
+.new-student-container {
   width: 100%;
   max-width: 1120px;
   height: 100vh;
@@ -112,13 +110,7 @@ export const Container = styled.div`
     text-decoration: none;
     font-weight: 500;
     transition: opacity 0.2s;
-  }
-
-  .backLink {
     margin-right: 8px;
-  }
-
-  .backLink {
     opacity: 0.8;
   }
-`;
+}

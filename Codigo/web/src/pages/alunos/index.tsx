@@ -11,13 +11,11 @@ import CardStudent from '../../components/CardStudent';
 import { DeleteModal } from '../../components/DeleteModal';
 import { useGetStudentsQuery } from '../../graphql/generated/graphql';
 import { withApollo } from '../../lib/withApollo';
-import { Container, Header } from '../../styles/pages/StudentsListPage';
-// interface StudentsListProps {
-//   data: GetStudentsQuery;
-// }
+import styles from '../../styles/pages/student-list.module.scss';
+
 function StudentsListPage() {
-  const [search, setSearch] = useState('');
-  const { data, loading } = useGetStudentsQuery({
+  const [search] = useState('');
+  const { data } = useGetStudentsQuery({
     variables: {
       search: search,
     },
@@ -34,28 +32,33 @@ function StudentsListPage() {
       <Head>
         <title>Descomplica - Smasy</title>
       </Head>
-      <Header className="page-header">
-        <div className="container">
+      <header className={styles.header}>
+        <div className={styles['container']}>
           <section id="top" className="animate-up-header z-15">
             <Image src={logoImg} alt="Descomplica Smasy" />
-            <a id="avatar-profile">
+            <a id={styles['avatar-profile']}>
               <p>
                 Gabriel Moura <span>Ver perfil</span>
               </p>
-              <Image src={userImage} width={64} height={64} />
+              <Image
+                src={userImage}
+                width={64}
+                height={64}
+                alt="Perfil do usuário"
+              />
             </a>
           </section>
 
-          <section id="summary" className="animate-up-content delay-1">
-            <div className="info">
-              <div className="total">
+          <section id="summary" className="animate-up delay-1">
+            <div className={styles['info']}>
+              <div className={styles['total']}>
                 <strong>{data?.students.length ?? 0}</strong>
                 Alunos ao total
               </div>
             </div>
 
             <Link href="/alunos/cadastrar">
-              <a className="btn black">
+              <a className={`${styles.btn} ${styles.black}`}>
                 <span>
                   <Image src={plusIcon} alt="Novo aluno" />
                 </span>
@@ -64,10 +67,10 @@ function StudentsListPage() {
             </Link>
           </section>
         </div>
-      </Header>
-      <Container>
+      </header>
+      <div className={styles.container}>
         <main className="animate-up delay-2">
-          <div className="cards">
+          <div className={styles.cards}>
             {data?.students.map((el, index) => (
               <CardStudent
                 key={el.id}
@@ -81,25 +84,9 @@ function StudentsListPage() {
             ))}
           </div>
         </main>
-      </Container>
+      </div>
     </>
   );
 }
-
-// export const getStaticProps: GetStaticProps = async ({}) => {
-//   const data = await getServerPageGetStudents(
-//     {
-//       variables: {
-//         search: '',
-//       },
-//     },
-//     {} as any
-//   );
-
-//   return {
-//     props: data.props,
-//     revalidate: 60 * 60, // 1 hour
-//   };
-// };
 
 export default withApollo(StudentsListPage);

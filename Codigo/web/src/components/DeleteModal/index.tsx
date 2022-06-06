@@ -1,17 +1,12 @@
 /* eslint-disable react/display-name */
 import React from 'react';
-import { Modal } from './styles';
+import styles from './delete-modal.module.scss';
 
-interface DeleteModalProps {
-  isVisible: boolean;
-  setModalVisible: (visible: boolean) => void;
-  handleDelete: () => void;
-}
 function DeleteModal() {
   const isVisible = false;
   if (!isVisible) return <></>;
   return (
-    <Modal>
+    <div className={styles['modal-wrapper']}>
       <div className="modal-content">
         <TrashIcon></TrashIcon>
         <span>Deseja deletar este item?</span>
@@ -29,7 +24,7 @@ function DeleteModal() {
           </button>
         </div>
       </div>
-    </Modal>
+    </div>
   );
 }
 

@@ -14,8 +14,8 @@ import Input from '../../components/Input';
 import toast from '../../components/Toast';
 import { useCreateStudentMutation } from '../../graphql/generated/graphql';
 import { withApollo } from '../../lib/withApollo';
-import { Container } from '../../styles/pages/NewStudent';
-import theme from '../../styles/theme';
+import styles from '../../styles/pages/new-student.module.scss';
+
 interface NewStudentProps {
   name: string;
   email: string;
@@ -69,8 +69,8 @@ function NewStudent() {
       <Head>
         <title>Smasy - Cadastro de aluno</title>
       </Head>
-      <Container>
-        <div className="content">
+      <div className={styles['new-student-container']}>
+        <div className={styles['content']}>
           <section>
             <Image src={logoImg} alt="Descomplica - Smasy" />
             <h1>Cadastro de Aluno</h1>
@@ -79,8 +79,8 @@ function NewStudent() {
               alunos
             </p>
             <Link href="/alunos">
-              <a className="backLink">
-                <FiArrowLeft size={16} color={theme.colors.primary} />
+              <a className={styles['backLink']}>
+                <FiArrowLeft size={16} color="#00e78e" />
                 Voltar para Home
               </a>
             </Link>
@@ -109,7 +109,7 @@ function NewStudent() {
             </div>
           </form>
         </div>
-      </Container>
+      </div>
     </>
   );
 }
