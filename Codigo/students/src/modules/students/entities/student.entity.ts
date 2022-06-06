@@ -13,4 +13,10 @@ export class Student {
 
   @Field()
   cpf: string;
+
+  @Field()
+  slug: string;
+
+  @Field()
+  createdAt: Date;
 }

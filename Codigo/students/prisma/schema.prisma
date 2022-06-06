@@ -12,11 +12,11 @@ datasource db {
 }
 
 model Student {
-  id    String @id @default(uuid())
-  name  String
-  email String @unique
-  cpf   String @unique
-
+  id        String    @id @default(uuid())
+  name      String
+  email     String    @unique
+  cpf       String    @unique
+  slug      String    @unique
   deletedAt DateTime?
 
   createdAt DateTime @default(now())

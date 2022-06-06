@@ -17,11 +17,18 @@ type Student {
   name: String!
   email: String!
   cpf: String!
+  slug: String!
+  createdAt: DateTime!
 }
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
 
 type Query {
   students(search: String): [Student!]!
-  student(id: String!): Student!
+  studentBySlug(slug: String!): Student!
 }
 
 type Mutation {
