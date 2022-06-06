@@ -104,6 +104,13 @@ export type UpdateStudentMutationVariables = Exact<{
 
 export type UpdateStudentMutation = { __typename?: 'Mutation', updateStudent: { __typename?: 'Student', name: string, id: string } };
 
+export type RemoveStudentMutationVariables = Exact<{
+  id: Scalars['String'];
+}>;
+
+
+export type RemoveStudentMutation = { __typename?: 'Mutation', removeStudent: { __typename?: 'Student', id: string } };
+
 export type GetStudentBySlugQueryVariables = Exact<{
   slug: Scalars['String'];
 }>;
@@ -192,6 +199,39 @@ export function useUpdateStudentMutation(baseOptions?: Apollo.MutationHookOption
 export type UpdateStudentMutationHookResult = ReturnType<typeof useUpdateStudentMutation>;
 export type UpdateStudentMutationResult = Apollo.MutationResult<UpdateStudentMutation>;
 export type UpdateStudentMutationOptions = Apollo.BaseMutationOptions<UpdateStudentMutation, UpdateStudentMutationVariables>;
+export const RemoveStudentDocument = gql`
+    mutation RemoveStudent($id: String!) {
+  removeStudent(id: $id) {
+    id
+  }
+}
+    `;
+export type RemoveStudentMutationFn = Apollo.MutationFunction<RemoveStudentMutation, RemoveStudentMutationVariables>;
+
+/**
+ * __useRemoveStudentMutation__
+ *
+ * To run a mutation, you first call `useRemoveStudentMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useRemoveStudentMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [removeStudentMutation, { data, loading, error }] = useRemoveStudentMutation({
+ *   variables: {
+ *      id: // value for 'id'
+ *   },
+ * });
+ */
+export function useRemoveStudentMutation(baseOptions?: Apollo.MutationHookOptions<RemoveStudentMutation, RemoveStudentMutationVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useMutation<RemoveStudentMutation, RemoveStudentMutationVariables>(RemoveStudentDocument, options);
+      }
+export type RemoveStudentMutationHookResult = ReturnType<typeof useRemoveStudentMutation>;
+export type RemoveStudentMutationResult = Apollo.MutationResult<RemoveStudentMutation>;
+export type RemoveStudentMutationOptions = Apollo.BaseMutationOptions<RemoveStudentMutation, RemoveStudentMutationVariables>;
 export const GetStudentBySlugDocument = gql`
     query GetStudentBySlug($slug: String!) {
   studentBySlug(slug: $slug) {

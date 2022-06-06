@@ -94,7 +94,7 @@ function UpdateStudent() {
         <div className={styles['content']}>
           <section>
             <Image src={logoImg} alt="Descomplica - Smasy" />
-            <h1>Cadastro de Aluno</h1>
+            <h1>Editar Aluno</h1>
             <p>
               Faça seu cadastro, entre na plataforma e ajude a cadastrar novos
               alunos
@@ -126,7 +126,7 @@ function UpdateStudent() {
             />
 
             <div className="input-group">
-              <Button type="submit">Cadastrar</Button>
+              <Button type="submit">Editar</Button>
             </div>
           </form>
         </div>
