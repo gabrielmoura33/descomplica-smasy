@@ -25,6 +25,8 @@ services:
       - postgres
     depends_on:
       - postgres
+    healthcheck:
+      test: nc -z localhost 3333
 
   gateway:
     container_name: gateway
@@ -39,6 +41,7 @@ services:
       - nest-api
     depends_on:
       - nest-api
+    restart: always
 
   nextjs-ui:
     build: ./web
