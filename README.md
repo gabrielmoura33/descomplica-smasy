@@ -28,9 +28,10 @@ O **Descomplica Smasy (Student Management System)** é um sistema de gerênciame
 
 ## :books: Requisitos
 
-- Ter [**Node.js**](https://nodejs.org/en/).
-- Ter [**Docker**](https://www.docker.com/).
-- Ter [**Yarn**](https://yarnpkg.com).
+- [**Node.js**](https://nodejs.org/en/).
+- [**Docker**](https://www.docker.com/).
+- [**Docker Compose**](https://docs.docker.com/compose/install/).
+- [**Yarn**](https://yarnpkg.com).
 
 ## Iniciando o projeto
 
