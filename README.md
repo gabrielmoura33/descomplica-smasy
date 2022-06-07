@@ -26,6 +26,27 @@ O **Descomplica Smasy (Student Management System)** é um sistema de gerênciame
 [![CI](https://github.com/mvt-project/mvt/actions/workflows/python-package.yml/badge.svg)](https://github.com/mvt-project/mvt/actions/workflows/python-package.yml)
 [![Downloads](https://pepy.tech/badge/mvt)](https://pepy.tech/project/mvt) -->
 
+## :books: Requisitos
+
+- Ter [**Node.js**](https://nodejs.org/en/).
+- Ter [**Docker**](https://www.docker.com/).
+- Ter [**Yarn**](https://yarnpkg.com).
+
+## Iniciando o projeto
+
+```bash
+  # Clonar o projeto:
+  $ git clone hhttps://github.com/gabrielmoura33/descomplica-smasy Descomplica Smasy
+
+  # Entrar no diretório:
+  $ cd descomplica-smasy/Codigo
+
+  #Construir e Iniciar containers
+  $ docker-compose build --no-cache
+  $ docker-compose up -d
+
+```
+
 ## 🎨 Protótipo
 
 <p align="center">
