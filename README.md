@@ -36,7 +36,7 @@ O **Descomplica Smasy (Student Management System)** é um sistema de gerênciame
 
 ```bash
   # Clonar o projeto:
-  $ git clone hhttps://github.com/gabrielmoura33/descomplica-smasy Descomplica Smasy
+  $ git clone https://github.com/gabrielmoura33/descomplica-smasy
 
   # Entrar no diretório:
   $ cd descomplica-smasy/Codigo
