@@ -17,9 +17,10 @@ export interface Student {
 }
 interface CardStudentProps extends HTMLProps<HTMLDivElement> {
   student: Student;
+  setModalVisible: () => void;
 }
 function CardStudent(props: CardStudentProps) {
-  const { student, key } = props;
+  const { student, key, setModalVisible } = props;
 
   function handleEdit() {
     return Router.push(`/alunos/${student.slug}`);
@@ -48,16 +49,17 @@ function CardStudent(props: CardStudentProps) {
         <a
           onClick={handleEdit}
           className={`${styles.btn} ${styles.white} ${styles.edit}`}
-          title="Editar doação"
+          title="Editar aluno"
         >
-          <Image src={editIcon} alt="Editar doação" />
+          <Image src={editIcon} alt="Editar aluno" />
         </a>
         <button
           className={`${styles.btn} ${styles.white} ${styles.edit}`}
-          title="Excluir doação"
+          title="Excluir aluno"
           type="button"
+          onClick={setModalVisible}
         >
-          <Image src={trashIcon} alt="Excluir doação" />
+          <Image src={trashIcon} alt="Excluir aluno" />
         </button>
       </div>
     </div>

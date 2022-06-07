@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Inter:wght@400;500;600&family=Roboto:wght@400;700&display=swap');
 .header {
   background: var(--color-primary);
   width: 100vw;
@@ -76,7 +77,7 @@
     border-radius: 0.313rem;
     border: 0;
 
-    font-family: IBM Plex Sans;
+    font-family: 'IBM Plex Sans';
     font-weight: 700;
     font-size: 0.875rem;
     line-height: 1.625rem;
@@ -148,7 +149,7 @@
   color: var(--color-white);
   text-decoration: none;
 
-  font-family: IBM Plex Sans;
+  font-family: 'IBM Plex Sans';
   text-align: right;
 
   p {

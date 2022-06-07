@@ -9,6 +9,7 @@ import type React from 'react';
 import { getApolloClient , ApolloClientContext} from '../../lib/withApollo';
 
 
+
 export async function getServerPageGetStudentBySlug
     (options: Omit<Apollo.QueryOptions<Types.GetStudentBySlugQueryVariables>, 'query'>, ctx: ApolloClientContext ){
         const apolloClient = getApolloClient(ctx);
